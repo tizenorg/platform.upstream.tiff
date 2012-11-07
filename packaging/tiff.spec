@@ -7,11 +7,6 @@ Url:            http://www.remotesensing.org/libtiff
 Group:          Productivity/Graphics/Convertors
 Source:         tiff-%{version}.tar.bz2
 Source3:        baselibs.conf
-Patch2:         tiff-%{version}-seek.patch
-Patch3:         tiff-%{version}-tiff2pdf-colors.patch
-Patch9:         tiff-%{version}-dont-fancy-upsampling.patch
-Patch10:        tiff-bigendian.patch
-Patch11:        tiff-%{version}-CVE-2012-3401.patch
 BuildRequires:  gcc-c++
 BuildRequires:  libjpeg8-devel
 BuildRequires:  libtool
@@ -47,11 +42,6 @@ the libtiff library.
 
 %prep
 %setup -q
-%patch2 -p1
-%patch3 -p1
-%patch9 -p1
-%patch10 -p1
-%patch11
 
 %build
 %configure --disable-static --with-pic
