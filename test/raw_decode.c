@@ -85,9 +85,9 @@ static int check_rgb_pixel( int pixel, int red, int green, int blue, unsigned ch
 static int check_rgba_pixel( int pixel, int red, int green, int blue, int alpha, unsigned char *buffer ) {
 	/* RGBA images are upside down - adjust for normal ordering */
 	int adjusted_pixel = pixel % 128 + (127 - (pixel/128)) * 128;
-	unsigned char *rgba = buffer + 4 * adjusted_pixel;
-	
-	if( rgba[0] == red && rgba[1] == green && rgba[2] == blue && rgba[3] == alpha ) {
+	unsigned int *rgba = (unsigned int*)(buffer + 4 * adjusted_pixel);
+
+	if( TIFFGetR(*rgba) == red && TIFFGetG(*rgba) == green && TIFFGetB(*rgba) == blue && TIFFGetA(*rgba) == alpha ) {
 		return 0;
 	}
 
