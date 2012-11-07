@@ -1,5 +1,4 @@
 Name:           tiff
-#BuildRequires:  libjbig-devel
 Version:        4.0.2
 Release:        0
 License:        HPND
