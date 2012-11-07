@@ -214,7 +214,7 @@ struct tiff {
 #define TIFFWriteFile(tif, buf, size) \
 	((*(tif)->tif_writeproc)((tif)->tif_clientdata,(buf),(size)))
 #define TIFFSeekFile(tif, off, whence) \
-	((*(tif)->tif_seekproc)((tif)->tif_clientdata,(off),(whence)))
+	((tif)->tif_seekproc?((*(tif)->tif_seekproc)((tif)->tif_clientdata,(toff_t)(off),whence)):0)
 #define TIFFCloseFile(tif) \
 	((*(tif)->tif_closeproc)((tif)->tif_clientdata))
 #define TIFFGetFileSize(tif) \
