@@ -7,6 +7,7 @@ Url:            http://www.remotesensing.org/libtiff
 Group:          Productivity/Graphics/Convertors
 Source:         tiff-%{version}.tar.bz2
 Source3:        baselibs.conf
+Source1001: 	tiff.manifest
 BuildRequires:  gcc-c++
 BuildRequires:  libjpeg8-devel
 BuildRequires:  libtool
@@ -42,6 +43,7 @@ the libtiff library.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static --with-pic
@@ -69,14 +71,17 @@ find html -name "Makefile*" | xargs rm
 %postun -n libtiff -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_bindir}/*
 
 %files -n libtiff
+%manifest %{name}.manifest
 %doc COPYRIGHT
 %{_libdir}/*.so.*
 
 %files -n libtiff-devel
+%manifest %{name}.manifest
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
