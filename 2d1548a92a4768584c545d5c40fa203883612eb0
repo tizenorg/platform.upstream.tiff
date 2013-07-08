@@ -1,0 +1,8 @@
+Change-Id: I2d1548a92a4768584c545d5c40fa203883612eb0
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:38:33 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4993
+Project: platform/upstream/tiff
+Branch: refs/heads/tizen
