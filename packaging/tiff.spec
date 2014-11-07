@@ -1,5 +1,5 @@
 Name:           tiff
-Version:        4.0.2
+Version:        4.0.3
 Release:        0
 License:        HPND
 Summary:        Tools for Converting from and to the Tiff Format
@@ -77,7 +77,7 @@ find html -name "Makefile*" | xargs rm
 
 %files -n libtiff
 %manifest %{name}.manifest
-%doc COPYRIGHT
+%license COPYRIGHT
 %{_libdir}/*.so.*
 
 %files -n libtiff-devel
@@ -86,4 +86,3 @@ find html -name "Makefile*" | xargs rm
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 
-%changelog
