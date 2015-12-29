@@ -1,7 +1,7 @@
 Name:           tiff
 Version:        4.0.3
 Release:        0
-License:        HPND
+License:        libtiff
 Summary:        Tools for Converting from and to the Tiff Format
 Url:            http://www.remotesensing.org/libtiff
 Group:          Productivity/Graphics/Convertors
@@ -50,6 +50,9 @@ cp %{SOURCE1001} .
 make %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/license
+cp -rf %{_builddir}/%{name}-%{version}/COPYRIGHT %{buildroot}/%{_datadir}/license/%{name}
+cp -rf %{_builddir}/%{name}-%{version}/COPYRIGHT %{buildroot}/%{_datadir}/license/libtiff
 mkdir -p %{buildroot}/{%{_mandir}/{man1,man3},usr/{bin,lib,include}}
 %make_install
 for f in `find %{buildroot}/%{_mandir} -type f -print ` ; do
@@ -71,17 +74,17 @@ find html -name "Makefile*" | xargs rm
 %postun -n libtiff -p /sbin/ldconfig
 
 %files
+%{_datadir}/license/%{name}
 %manifest %{name}.manifest
 %defattr(-,root,root)
 %{_bindir}/*
 
 %files -n libtiff
+%{_datadir}/license/libtiff
 %manifest %{name}.manifest
-%license COPYRIGHT
 %{_libdir}/*.so.*
 
 %files -n libtiff-devel
-%manifest %{name}.manifest
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
