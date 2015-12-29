@@ -1,7 +1,7 @@
 Name:           tiff
 Version:        4.0.3
 Release:        0
-License:        HPND
+License:        libtiff
 Summary:        Tools for Converting from and to the Tiff Format
 Url:            http://www.remotesensing.org/libtiff
 Group:          Productivity/Graphics/Convertors
