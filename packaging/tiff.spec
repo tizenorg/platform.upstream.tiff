@@ -1,6 +1,6 @@
 Name:           tiff
-Version:        4.0.3
-Release:        0
+Version:        4.0.6
+Release:        1
 License:        libtiff
 Summary:        Tools for Converting from and to the Tiff Format
 Url:            http://www.remotesensing.org/libtiff
